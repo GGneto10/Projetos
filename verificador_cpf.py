@@ -1,10 +1,15 @@
 
 #Recebe o CPF
-CPF_cliente = input('Coloque aqui seu CPF(appenas Numerais): ')  #74682489070
-if not CPF_cliente.isdigit():
-    print('Apenas Numeros, por favor.')     #Confere se são apenas números, se não for, quebra o código
+CPF_cliente = input('Coloque aqui seu CPF(apenas Numerais): ').replace('.','').replace('-', '').replace(' ', '')  #74682489070
+#Agora, com replace, nãa há mais necessidade do if
+
+#if not CPF_cliente.isdigit():
+#    print('Apenas Numeros, por favor.')     #Confere se são apenas números, se não for, quebra o código
 
 nove_digitos = CPF_cliente[:9] #Corta até o nono número
+
+CPF_é_sequencial = CPF_cliente == CPF_cliente[0] * len(CPF_cliente)
+
 
 cont_1 = 10     #Contador
 res_digito1 = 0 #Variável de armazenar o resultado
