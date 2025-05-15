@@ -1,4 +1,4 @@
-#Código direcionado a ajudar pessoas com diferentes rendas a organizar o próprio dinheiro de forma rasa.
+#Código direcionado a ajudar pessoas com diferentes Salários a organizar o próprio dinheiro de forma rasa.
 #ControleFinanceiro
 print('Aqui vamos te ajudar com controle financeiro ' \
 'com um suporte Básico de como usar suas economias  ' \
