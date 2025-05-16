@@ -16,7 +16,7 @@ def DescontoINSS(SalarioBruto):
         Desconto1 = (SalarioBrutoFloat * (7.5)) /100
         ResDesconto1 = SalarioBrutoFloat - Desconto1
         return ResDesconto1
-    elif 1518.01 <= SalarioBrutoFloat <= 2793.88
+    elif 1518.01 >= SalarioBrutoFloat <= 2793.88
         Desconto2 = (SalarioBrutoFloat * (9)) /100
         ResDesconto2 = SalarioBrutoFloat - Desconto2
         return ResDesconto2
