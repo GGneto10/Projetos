@@ -16,7 +16,7 @@ def DescontoINSS(SalarioBruto):
         Desconto1 = (SalarioBrutoFloat * (7.5)) /100
         ResDesconto1 = SalarioBrutoFloat - Desconto1
         return ResDesconto1
-    elif 2793.88 >= SalarioBrutoFloat < 1518.01:
+    elif 1518.01 <= SalarioBrutoFloat <= 2793.88
         Desconto2 = (SalarioBrutoFloat * (9)) /100
         ResDesconto2 = SalarioBrutoFloat - Desconto2
         return ResDesconto2
@@ -66,7 +66,7 @@ def EscolhadeControle3(SalarioDescontado):
     return PartesEscolha3
     
 if EscolhadeControle == '1':
-    Valores1 = (EscolhadeControle2(SalarioDescontadoINSS))
+    Valores1 = (EscolhadeControle1(SalarioDescontadoINSS))
     print(f'Separando seu salário(Já descontado do INSS) fica para: Contas: {Valores1[0]:.2f}R$ , Investimentos: {Valores1[1]:.2f} R$ e Lazer: {Valores1[2]:.2f} R$')
 
 elif EscolhadeControle == '2':
