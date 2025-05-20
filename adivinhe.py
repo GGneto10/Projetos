@@ -38,7 +38,7 @@ while chances >= 0 :
     except ValueError:
         print('Por favor, um número Inteiro')
         chances -= 1
-        os.system('cls')
+        
 
         continue
 
