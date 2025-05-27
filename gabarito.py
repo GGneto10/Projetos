@@ -1,31 +1,36 @@
 #Esse código recebe um gabarito, do professor, e usa ele de 
 #Base para respostas de prova
-nota = 0
-respostas_do_gabarito = input('Olá, professor, insira por favor as respostas do gabarito: ').split() 
-respostas_do_aluno = input('Aqui sera o gabarito do aluno: ').split() 
 
-if len(respostas_do_aluno) == len(respostas_do_gabarito):  #Verifico se a quantidade de Respostas do aluno é igual a quantidade de respostas do gabarito
-    if respostas_do_gabarito == respostas_do_aluno:
-        print('4/4')
+relacao = {}
+gabarito = input('Olá professor(a), insira por favor as respostas do gabarito: ').split() 
+
+while True:
+
+    nome_do_aluno = input("Digite o nome do aluno (ou 'sair' para terminar): ")
+    if nome_do_aluno.lower() == 'sair':
+        break
+    respostas = input("Digite as respostas do aluno separadas como no exemplo (ex: C A B C): ").split()
+    relacao[nome_do_aluno] = respostas
+
+    if len(respostas) != len(gabarito):
+        print(f"AVISO: {nome_do_aluno} tem {len(respostas)} respostas (o gabarito tem {len(gabarito)}). A nota será 0.")
+        relacao[nome_do_aluno] = {'respostas': respostas, 'nota': 0}
+        continue
+
+print("\n--- RESULTADOS ---")
+print(f"Gabarito oficial: {' '.join(gabarito)}\n")
+
+for nome, respostas in relacao.items():
+    nota = 0
+    # Verifica se o aluno tem o mesmo número de questões que o gabarito
+    if len(respostas) == len(gabarito):
+        nota = sum(1 for i in range(len(gabarito)) if respostas[i] == gabarito[i])
     else:
-        Oque_esta_certo = [0,1,2,3]
-        for i in Oque_esta_certo:
-            questões_acertadas = respostas_do_gabarito[i] == respostas_do_aluno[i]
-            if questões_acertadas:
-                print(f'A questão {i} na {respostas_do_aluno[i]} está correta.')
-                nota += 1
-            else:
-                print(f'A questão {i} do aluno segundo o {respostas_do_gabarito} está errada.')
-            
+        print('O aluno não colocou em seu gabarito a quantidade necessária de questões para ser verificado.')
+        nota = 0  # Se não, nota = 0
+    
+    # Exibe o resultado formatado
+    print(f"{nome} - Respostas: {' '.join(respostas)} | Nota: {nota}/{len(gabarito)}")
 
-    print(f"Gabarito: {respostas_do_gabarito}")
-    print(f'Aluno: {respostas_do_aluno}')
-    print(f'A nota é: {nota}/4')
-
-elif len(respostas_do_aluno) >= len(respostas_do_gabarito):
-    print('Prova zerada. 0/0')
-else: 
-    print('Prova zerada. 0/0')
-
-#Para melhorar esse código: Criar uma lista de alunos, e cada resposta deles deve ser exibida com seu nome ao final em uma lista
+#Para melhorar esse código: Criar uma lista de alunos, e cada resposta deles deve ser exibida com seu nome ao final em uma lista (FEITO)
 #para aprimorar: Sistema de notas, adcionar notas de acordo com a quantidade de acertos.
