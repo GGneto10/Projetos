@@ -32,5 +32,3 @@ for nome, respostas in relacao.items():
     # Exibe o resultado formatado
     print(f"{nome} - Respostas: {' '.join(respostas)} | Nota: {nota}/{len(gabarito)}")
 
-#Para melhorar esse código: Criar uma lista de alunos, e cada resposta deles deve ser exibida com seu nome ao final em uma lista (FEITO)
-#para aprimorar: Sistema de notas, adcionar notas de acordo com a quantidade de acertos.
